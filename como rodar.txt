@@ -1,0 +1,14 @@
+# inicie o tracker:
+python3 tracker/tracker.py --port 1111
+
+# inicie um nó:
+python3 run_node.py --port 4444 --ip localhost --tracker_ip localhost --tracker_port 1111
+
+# inicie outro nó com porta diferente, exemplo:
+python3 run_node.py --port 4445 --ip localhost --tracker_ip localhost --tracker_port 1111
+
+# faça o upload do arquivo em um nó:
+torrent -setMode upload "test.txt"
+
+# faça o download do arquivo em outro nó:
+torrent -search "test.txt"
